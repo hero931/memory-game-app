@@ -37,21 +37,34 @@ export default {
 <style>
   .box {    
     display: grid;
-    grid-template-columns: 5rem 15rem 15rem 15rem 20rem;
-    grid-template-rows: 2rem 10rem 15rem 10rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 178px);
+    grid-template-areas: "alef bet gimel dal"
+                       "hey vav zain het"
+                        "hey kaf haf lam"
+                       "hey nun reish kuf";
+    grid-auto-flow: dense;
+    grid-gap: 1rem;
+    color: white;
+    text-align: center;
+    background-color: rgb(162, 199, 199);
   }
   
   .myForm {
-    grid-area: 2/2/3/2;
+    grid-area: alef;
+    margin: 1rem;
     border: 1px solid lightgray;
     border-radius: 6px;
     display: flex;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center;
+    box-shadow: 5px 10px rgb(151, 138, 138);
+    background: rgb(191, 221, 201)       
   }
 
   .myList {
-    grid-area: 4/2/4/2;    
+    grid-area: hey;
+    margin: 1rem;       
   }
 </style>
 

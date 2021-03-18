@@ -1,9 +1,10 @@
-<template>                                   
-    <b-list-group class="myList">
-        <b-list-group-item button @click="deleteName" class="myItem">
-            {{firstName}}
-        </b-list-group-item>
-    </b-list-group>  
+<template>
+    <b-list-group>            
+        <b-list-group-item button class="myItem">                            
+            {{firstName}}                                
+            <b-button @click="deleteName" class="mybtn" size="sm" variant="outline-danger">Delete</b-button>
+        </b-list-group-item>            
+    </b-list-group>             
 </template>
 
 <script>
@@ -19,10 +20,14 @@ export default {
 </script>
 
 <style scoped>   
-    .myList {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        text-align: center;
+    .myItem {
+        box-shadow: 3px 6px rgb(151, 138, 138);
+        margin: 6px;
+        background-color: rgb(202, 230, 227);
+    }
+    .mybtn {
+        display: flex;        
     }    
 </style>
+
+
