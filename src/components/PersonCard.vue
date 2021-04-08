@@ -6,7 +6,7 @@
             img-alt="Student"               
         >
             <div class="text">
-                You have 1 min to momorize the details that on this picture. After 1 min this picture will disappear and you will have to answer the questions!
+                You have 10 seconds to momorize the details that on this picture. After 1 min this picture will disappear and you will have to answer the questions!
             </div>                                                   
         </b-card>
     </div>

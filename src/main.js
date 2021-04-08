@@ -7,6 +7,7 @@ import NewFriend from './components/NewFriend.vue'
 import PersonCard from './components/PersonCard.vue'
 import MyAnswers from './components/MyAnswers.vue'
 import WelCome from './components/WelCome.vue'
+import MyUser from './components/MyUser.vue'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
 
@@ -17,6 +18,7 @@ Vue.component('new-friend', NewFriend)
 Vue.component('person-card', PersonCard)
 Vue.component('my-answers', MyAnswers)
 Vue.component('wel-come', WelCome)
+Vue.component('my-user', MyUser)
 
 new Vue({
   el: '#app',    

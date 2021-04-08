@@ -16,7 +16,7 @@ export default {
         return {
             enterUserName: ''
         }
-    },
+    },    
     methods: {
         submitForm() {
             this.$emit('add-username', this.enterUserName);

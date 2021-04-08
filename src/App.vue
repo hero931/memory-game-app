@@ -1,7 +1,7 @@
 <template>  
     <div class="box">
       <div class="welcome" v-if="hello" @click="startGame"><wel-come></wel-come></div>      
-      <div class="myForm" v-if="personQuest"><new-friend @add-username="addUName"></new-friend></div>         
+      <div class="myForm" v-if="personQuest"><new-friend @add-username="addUName"></new-friend></div>               
       <div class="myList" v-if="personQuest"><my-friends              
           v-for="name in names"
           :key="name.id"
@@ -9,8 +9,27 @@
           :username="name.username"
           @delete="delName"      
         ></my-friends></div>        
-        <div class="quest" v-if="startQuiz" @add-quest=""><my-quest></my-quest></div>
-        <div class="person" v-if="personQ"><person-card></person-card></div>                                          
+        <div class="quest" v-if="startQuiz"><my-quest @add-quest="getAnswers"></my-quest></div>
+        <div class="person" v-if="personQ"><person-card></person-card></div>
+        <div class="myAnswer" v-if="ansList">
+        <my-answers               
+          v-for="answer in answers"
+          :key="answer.id"
+          :id="answer.id"
+          :age="answer.age" 
+          :hair="answer.hair" 
+          :belt="answer.belt" 
+          :pocket="answer.pocket" 
+          :smile="answer.smile" 
+          :shirt="answer.shirt"          
+          @start-over="newGame"
+        ></my-answers></div>
+        <div class="fdback" v-if="feedback"><my-user
+          v-for="name in names"
+          :key="name.id"
+          :id="name.id"
+          :username="name.username"
+        ></my-user></div>                                                  
     </div>  
 </template>
 
@@ -25,7 +44,9 @@ export default {
       startQuiz: false,
       hello: true,
       personQuest: false,
-      personQ: false
+      personQ: false,
+      ansList: false,
+      feedback: false
     }
   },   
   methods: {
@@ -46,7 +67,7 @@ export default {
       this.countStart();            
     },    
     countStart() {
-      setTimeout(this.countDown, 1000);
+      setTimeout(this.countDown, 10000);
     },
     countDown() {
       this.personQ = false;
@@ -61,11 +82,23 @@ export default {
         belt: belt,
         pocket: pocket,
         smile: smile,
-        shirt: shirt
+        shirt: shirt        
       };
       this.answers.push(getAnswer);
-    }
-    
+      this.feedback = true;
+      this.personQuest = false;
+      this.personQ = false;
+      this.startQuiz = false;
+      this.ansList = true;      
+    },
+    newGame() {      
+      this.hello = true;
+      this.personQuest = false;
+      this.personQ = false;
+      this.startQuiz = false;
+      this.ansList = false;
+      this.feedback = false;
+    }  
   },
   
 }
@@ -83,13 +116,13 @@ export default {
     grid-template-areas: "alef bet bet dal"
                        "hey beta gimel dal"
                         "hey beta gimel lam"
-                       "hey nun reish kuf";
+                       "nun nun reish kuf";
     grid-auto-flow: dense;
     grid-gap: 1rem;
     color: white;
     text-align: center;
     background-color: rgb(180, 207, 207);
-  }
+  }  
   
   .myForm {
     grid-area: alef;           
@@ -109,7 +142,15 @@ export default {
 
   .quest {
     grid-area: bet/beta;
-  }  
+  }
+
+  .myAnswer {
+    grid-area: bet/beta;
+  } 
+
+  .fdback {
+    grid-area: hey;
+  } 
 </style>
 
 
