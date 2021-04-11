@@ -2,22 +2,22 @@
     <div class="quest mt-3">
         <b-form @submit.prevent="submitForm">
             <b-form-group label="Question 1" description="How many books a person holds?">
-                <b-form-input placeholder="Enter Age" type="number" v-model="age"></b-form-input>                
+                <b-form-input placeholder="Number of books" type="number" v-model.trim="book" required></b-form-input>                
             </b-form-group>
             <b-form-group label="Question 2" description="Hair color?">
-                <b-form-input placeholder="Enter Color" type="text" v-model="hair"></b-form-input>                
+                <b-form-input placeholder="Enter Color" type="text" v-model.trim="hair" required></b-form-input>                
             </b-form-group>
             <b-form-group label="Question 3" description="Color of the belt?">
-                <b-form-input placeholder="Enter Color" type="text" v-model="belt"></b-form-input>                
+                <b-form-input placeholder="Enter Color" type="text" v-model.trim="belt" required></b-form-input>                
             </b-form-group>
             <b-form-group label="Question 4" description="How many pockets on the pants?">
-                <b-form-input placeholder="Enter number" type="number" v-model="pocket"></b-form-input>                
+                <b-form-input placeholder="Enter number" type="number" v-model.trim="pocket" required></b-form-input>                
             </b-form-group>
             <b-form-group label="Question 5" description="Is the person smiles?">
-                <b-form-input placeholder="Enter yes or no" type="text" v-model="smile"></b-form-input>                
+                <b-form-input placeholder="Enter yes or no" type="text" v-model.trim="smile" required></b-form-input>                
             </b-form-group>
             <b-form-group label="Question 6" description="What was a shirt color of the person?">
-                <b-form-input placeholder="Enter number" type="text" v-model="shirt"></b-form-input>                
+                <b-form-input placeholder="Enter color" type="text" v-model.trim="shirt" required></b-form-input>                
             </b-form-group>
             <b-button class="myBtn" type="submit" size="sm" variant="outline-success">Submit</b-button>           
         </b-form>
@@ -29,7 +29,7 @@ export default {
     emits: ['add-quest'],    
     data() {
         return {
-          age: '',
+          book: '',
           hair: '',
           belt: '',
           pocket: '',
@@ -39,8 +39,8 @@ export default {
     },
     methods: {
         submitForm() {
-            this.$emit('add-quest', this.age, this.hair, this.belt, this.pocket, this.smile, this.shirt);
-            this.age = '';
+            this.$emit('add-quest', this.book, this.hair, this.belt, this.pocket, this.smile, this.shirt);
+            this.book = '';
             this.hair = '';
             this.belt = '';
             this.pocket = '';

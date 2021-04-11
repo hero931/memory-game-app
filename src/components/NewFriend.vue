@@ -2,7 +2,7 @@
     <div class="friend">
         <b-form @submit.prevent="submitForm">
             <b-form-group>
-                <b-form-input class="mt-3" placeholder="Enter Username" type="text" v-model="enterUserName"></b-form-input>
+                <b-form-input class="mt-3" placeholder="Enter Username" type="text" v-model.trim="enterUserName" required></b-form-input>
                 <b-button class="myBtn" type="submit" size="sm" variant="outline-success">Submit</b-button>
             </b-form-group>           
         </b-form>  

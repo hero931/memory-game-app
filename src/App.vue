@@ -16,7 +16,7 @@
           v-for="answer in answers"
           :key="answer.id"
           :id="answer.id"
-          :age="answer.age" 
+          :book="answer.book" 
           :hair="answer.hair" 
           :belt="answer.belt" 
           :pocket="answer.pocket" 
@@ -67,17 +67,17 @@ export default {
       this.countStart();            
     },    
     countStart() {
-      setTimeout(this.countDown, 10000);
+      setTimeout(this.countDown, 60000);
     },
     countDown() {
       this.personQ = false;
       this.startQuiz = true;
       this.personQuest = true;
     },
-    getAnswers(age,hair,belt,pocket,smile,shirt) {
+    getAnswers(book,hair,belt,pocket,smile,shirt) {
       const getAnswer = {
         id: new Date().toISOString(),
-        age: age,
+        book: book,
         hair: hair,
         belt: belt,
         pocket: pocket,

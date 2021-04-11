@@ -1,7 +1,7 @@
 <template>
     <div class="myAnswers">       
         <b-list-group class="myList">                
-                <b-list-group-item class="item"><p>Your answer is: <strong>{{age}}</strong> which is:  <strong>{{answers[0] == rAnswers[0] ? 'Correct': 'Wrong'}}</strong></p></b-list-group-item>
+                <b-list-group-item class="item"><p>Your answer is: <strong>{{book}}</strong> which is:  <strong>{{answers[0] == rAnswers[0] ? 'Correct': 'Wrong'}}</strong></p></b-list-group-item>
                 <b-list-group-item class="item"><p>Your answer is: <strong>{{hair}}</strong> which is:  <strong>{{answers[1] == rAnswers[1] ? 'Correct': 'Wrong'}}</strong></p></b-list-group-item>
                 <b-list-group-item class="item"><p>Your answer is: <strong>{{belt}}</strong> which is:  <strong>{{answers[2] == rAnswers[2] ? 'Correct': 'Wrong'}}</strong></p></b-list-group-item>
                 <b-list-group-item class="item"><p>Your answer is: <strong>{{pocket}}</strong> which is:  <strong>{{answers[3] == rAnswers[3] ? 'Correct': 'Wrong'}}</strong></p></b-list-group-item>
@@ -17,11 +17,11 @@
 <script>
 export default {
     emits: ['start-over'],    
-    props: ['age', 'hair', 'belt', 'pocket', 'smile', 'shirt', 'username'],
+    props: ['book', 'hair', 'belt', 'pocket', 'smile', 'shirt', 'username'],
     data() {
         return {
-            answers: [7, 'brown', 'blue', 2, 'yes', 'red'],
-            rAnswers: [this.age, this.hair, this.belt, this.pocket, this.smile, this.shirt]                        
+            answers: [3, 'brown', 'brown', 3, 'yes', 'red'],
+            rAnswers: [this.book, this.hair, this.belt, this.pocket, this.smile, this.shirt]                        
         }
     },
     methods: {
