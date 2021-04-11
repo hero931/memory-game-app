@@ -1,6 +1,6 @@
 {
-  "name": "vue-test-app",
-  "description": "testing vue with bootstrap",
+  "name": "memory-game-app",
+  "description": "Memory game for kids",
   "version": "1.0.0",
   "author": "Ilya Andreev",
   "private": true,
